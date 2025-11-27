@@ -165,7 +165,7 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Lifting Up PointClouds</h2>
+      <h2 class="title is-3 has-text-centered">From Pointclouds to Fourier Features</h2>
       <p class="content has-text-justified">
         Adding a Fourier feature mapping from Cartesian coordinates into a higher-dimensional feature space improves performance for any point cloud encoder used for diffusion imitation learning.
         For high-precision policies, the network must learn to condition on fine details in the scene geometry to e.g. device whether to insert the leg into the slot or reposition it, yet neural networks learn the high frequency components of the target function only slowly, if at all.
@@ -176,7 +176,7 @@
       </figure>
 
 
-      <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Generic Framework</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Framework Overview</h2>
       <p class="content has-text-justified">
         Given a pointcloud, we first map each point and its neighbourhood to Fourier feature space. This amplifies subtle geometric differences in each neighborhood. The tokenizer extracts and aggregates features for each neighborhood to produce a set of tokens which are then forwarded to a goal-conditioned diffusion policy to denoise the next chunk of actions.
       </p>

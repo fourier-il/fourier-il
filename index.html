@@ -110,8 +110,6 @@
 </head>
 
 <body>
-
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -165,26 +163,28 @@
   </section>
   <!-- End paper abstract -->
 
-  <!--<section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Main Figure from Paper</h2>
+      <h2 class="title is-3 has-text-centered">Lifting Up PointClouds</h2>
       <p class="content has-text-justified">
-        Put the main figure here and say something
+        Adding a Fourier feature mapping from Cartesian coordinates into a higher-dimensional feature space improves performance for any point cloud encoder used for diffusion imitation learning.
+        For high-precision policies, the network must learn to condition on fine details in the scene geometry to e.g. device whether to insert the leg into the slot or reposition it, yet neural networks learn the high frequency components of the target function only slowly, if at all.
+        While neighbouring points in the scene have very similar Cartesian features, the high-dimensional Fourier features allow them to easily be distinguished.
       </p>
       <figure class="image" style="text-align: center;">
         <img src="static/pdfs/pcd_to_fourier.pdf" style="max-width: 100%; height: auto;" alt="...">
       </figure>
 
 
-      <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Architecture Diagram</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Generic Framework</h2>
       <p class="content has-text-justified">
-        Works with everything, idk
+        Given a pointcloud, we first map each point and its neighbourhood to Fourier feature space. This amplifies subtle geometric differences in each neighborhood. The tokenizer extracts and aggregates features for each neighborhood to produce a set of tokens which are then forwarded to a goal-conditioned diffusion policy to denoise the next chunk of actions.
       </p>
       <figure class="image" style="text-align: center;">
         <img src="static/pdfs/architecture.pdf" style="max-width: 100%; height: auto;" alt="...">
       </figure>
 
-    </div> -->
+    </div>
   </section>
   <!-- Task Videos -->
   <section class="section">

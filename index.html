@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
   <meta name="title" content="Fourier Features Let Agents Learn High Precision Policies with Imitation Learning">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="By mapping Cartesian point clouds to high-dimensional Fourier features, we enable imitation-learning agents to mitigate the innate low-pass characteristics of neural networks and support the learning of high-precision policies.">
+  <meta name="description"
+    content="By mapping Cartesian point clouds to high-dimensional Fourier features, we enable imitation-learning agents to mitigate the innate low-pass characteristics of neural networks and support the learning of high-precision policies.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
   <meta name="keywords" content="imitation learning, robotics, point clouds, point maps">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,17 +25,20 @@
 
   <!-- TODO: Replace with your paper title and authors -->
   <title>Fourier Features Let Agents Learn High Precision Policies with Imitation Learning</title>
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -41,10 +46,10 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -52,7 +57,7 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
@@ -106,7 +111,7 @@
     ]
   }
   </script>
-  
+
 </head>
 
 <body>
@@ -167,9 +172,13 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">From Pointclouds to Fourier Features</h2>
       <p class="content has-text-justified">
-        Adding a Fourier feature mapping from Cartesian coordinates into a higher-dimensional feature space improves performance for any point cloud encoder used for diffusion imitation learning.
-        For high-precision policies, the network must learn to condition on fine details in the scene geometry to e.g. device whether to insert the leg into the slot or reposition it, yet neural networks learn the high frequency components of the target function only slowly, if at all.
-        While neighbouring points in the scene have very similar Cartesian features, the high-dimensional Fourier features allow them to easily be distinguished.
+        Adding a Fourier feature mapping from Cartesian coordinates into a higher-dimensional feature space improves
+        performance for any point cloud encoder used for diffusion imitation learning.
+        For high-precision policies, the network must learn to condition on fine details in the scene geometry to e.g.
+        device whether to insert the leg into the slot or reposition it, yet neural networks learn the high frequency
+        components of the target function only slowly, if at all.
+        While neighbouring points in the scene have very similar Cartesian features, the high-dimensional Fourier
+        features allow them to easily be distinguished.
       </p>
       <figure class="image" style="text-align: center;">
         <img src="static/images/pcd_to_fourier.png" style="max-width: 100%; height: auto;" alt="...">
@@ -178,7 +187,10 @@
 
       <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Framework Overview</h2>
       <p class="content has-text-justified">
-        Given a pointcloud, we first map each point and its neighbourhood to Fourier feature space. This amplifies subtle geometric differences in each neighborhood. The tokenizer extracts and aggregates features for each neighborhood to produce a set of tokens which are then forwarded to a goal-conditioned diffusion policy to denoise the next chunk of actions.
+        Given a pointcloud, we first map each point and its neighbourhood to Fourier feature space. This amplifies
+        subtle geometric differences in each neighborhood. The tokenizer extracts and aggregates features for each
+        neighborhood to produce a set of tokens which are then forwarded to a goal-conditioned diffusion policy to
+        denoise the next chunk of actions.
       </p>
       <figure class="image" style="text-align: center;">
         <img src="static/images/architecture.png" style="max-width: 100%; height: auto;" alt="...">
@@ -414,6 +426,146 @@
 
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">RoboCasa Rollouts</h2>
+
+      <!-- Task Template -->
+      <!-- COFFEE -->
+      <div class="box">
+        <h3 class="title is-4">Coffee</h3>
+        <div class="columns is-multiline">
+          <!-- First pair: drawer_ff left, drawer_noff right -->
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/coffee/7yr734lp_point_cloud_only_with_fourier_coffee_press_button.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                With FF
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/coffee/490ob783_point_cloud_only_without_fourier_coffee_press_button.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                Without FF
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Microwave -->
+      <div class="box">
+        <h3 class="title is-4">Microwave</h3>
+        <div class="columns is-multiline">
+          <!-- First pair: drawer_ff left, drawer_noff right -->
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/microwave/hnk6118s_point_cloud_only_with_fourier_turn_on_microwave.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                With FF
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/microwave/hqoive9k_point_cloud_only_without_fourier_turn_on_microwave.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                Without FF
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sink -->
+      <div class="box">
+        <h3 class="title is-4">Sink</h3>
+        <div class="columns is-multiline">
+          <!-- First pair: drawer_ff left, drawer_noff right -->
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/sink/1cg23ekn_point_cloud_only_with_fourier_features_turn_sink_spout.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                With FF
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source src="static/videos/robocasa/sink/b4kitqw6_point_cloud_only_without_fourier_turn_sink_spout.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                Without FF
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oven -->
+      <div class="box">
+        <h3 class="title is-4">Oven</h3>
+        <div class="columns is-multiline">
+          <!-- First pair: drawer_ff left, drawer_noff right -->
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source
+                  src="static/videos/robocasa/oven/7yr734lp_point_cloud_only_with_fourier_turn_on_oven.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                With FF
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-half">
+            <div style="position: relative; width: 100%;">
+              <video autoplay muted loop playsinline controls width="100%">
+                <source src="static/videos/robocasa/oven/55is5b5g_point_cloud_only_without_fourier_turn_on_oven.mp4"
+                  type="video/mp4">
+              </video>
+              <div
+                style="position: absolute; top: 8px; right: 8px; color: white; font-weight: bold; font-size: 16px; text-shadow: 1px 1px 3px black;">
+                Without FF
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
@@ -429,7 +581,6 @@
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
-
           </div>
         </div>
       </div>
